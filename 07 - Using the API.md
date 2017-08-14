@@ -6,7 +6,8 @@ The package API is build following the CQRS principal to seperate writes from re
 
 The package also uses Ninject for dependency injection. That way you only work with the interfaces not with the actual implementation. To get the implementation the EventCalendarServiceContainer can be used.
 
-Sample:
+__Sample:__
+
 ```csharp
 EventCalendarServiceContainer.GetService<ICommandDispatcher>();
 ```
@@ -23,34 +24,36 @@ Following the list of currently available queries with an example implementation
 
 <details>
     <summary>GetAllCalendarQuery</summary>
-    <p>
+
 ```csharp
+
 var allCalendarResult = _queryDispatcher.Dispatch<GetAllCalendarQuery, GetAllCalendarQueryResult>(new GetAllCalendarQuery());
+
 ```
-    </p>
 </details>
 
 <details>
     <summary>GetAllCalendarByUserQuery</summary>
-    <p>
+
 ```csharp
+
 var calendarResult = _queryDispatcher.Dispatch<GetAllCalendarByUserQuery, GetAllCalendarByUserQueryResult>(new GetAllCalendarByUserQuery() { UserId = _user.Id });
+
 ```
-    </p>
 </details>
 
 <details>
     <summary>GetCalendarByIdQuery</summary>
-    <p>
+    
 ```csharp
 var calendarByIdResult = _queryDispatcher.Dispatch<GetCalendarByIdQuery, GetCalendarByIdQueryResult>(new GetCalendarByIdQuery { CalendarId = id });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>GetPagedCalendarQuery</summary>
-    <p>
+    
 ```csharp
 var pagedCalendarQuery = new GetPagedCalendarQuery()
     {
@@ -63,88 +66,88 @@ var pagedCalendarQuery = new GetPagedCalendarQuery()
     };
     var pagedCalendarResult = _queryDispatcher.Dispatch<GetPagedCalendarQuery, GetPagedCalendarQueryResult>(pagedCalendarQuery);
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>GetIcsForCalendarQuery</summary>
-    <p>
+    
 ```csharp
 var result = dispatcher.Dispatch<GetIcsForCalendarQuery, GetIcsForCalendarQueryResult>(new GetIcsForCalendarQuery { CalendarId = id, Culture = CultureInfo.CurrentCulture.ToString() });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>GetAllCalendarByUserQuery</summary>
-    <p>
+    
 ```csharp
 var calendarResult = _queryDispatcher.Dispatch<GetAllCalendarByUserQuery, GetAllCalendarByUserQueryResult>(new GetAllCalendarByUserQuery() { UserId = _user.Id });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>GetAllCalendarByUserQuery</summary>
-    <p>
+    
 ```csharp
 var calendarResult = _queryDispatcher.Dispatch<GetAllCalendarByUserQuery, GetAllCalendarByUserQueryResult>(new GetAllCalendarByUserQuery() { UserId = _user.Id });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>GetAllCalendarByUserQuery</summary>
-    <p>
+    
 ```csharp
 var calendarResult = _queryDispatcher.Dispatch<GetAllCalendarByUserQuery, GetAllCalendarByUserQueryResult>(new GetAllCalendarByUserQuery() { UserId = _user.Id });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>GetAllCalendarByUserQuery</summary>
-    <p>
+    
 ```csharp
 var calendarResult = _queryDispatcher.Dispatch<GetAllCalendarByUserQuery, GetAllCalendarByUserQueryResult>(new GetAllCalendarByUserQuery() { UserId = _user.Id });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>GetAllCalendarByUserQuery</summary>
-    <p>
+    
 ```csharp
 var calendarResult = _queryDispatcher.Dispatch<GetAllCalendarByUserQuery, GetAllCalendarByUserQueryResult>(new GetAllCalendarByUserQuery() { UserId = _user.Id });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>GetAllCalendarByUserQuery</summary>
-    <p>
+    
 ```csharp
 var calendarResult = _queryDispatcher.Dispatch<GetAllCalendarByUserQuery, GetAllCalendarByUserQueryResult>(new GetAllCalendarByUserQuery() { UserId = _user.Id });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>GetAllCalendarByUserQuery</summary>
-    <p>
+    
 ```csharp
 var calendarResult = _queryDispatcher.Dispatch<GetAllCalendarByUserQuery, GetAllCalendarByUserQueryResult>(new GetAllCalendarByUserQuery() { UserId = _user.Id });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>GetAllCalendarByUserQuery</summary>
-    <p>
+    
 ```csharp
 var calendarResult = _queryDispatcher.Dispatch<GetAllCalendarByUserQuery, GetAllCalendarByUserQueryResult>(new GetAllCalendarByUserQuery() { UserId = _user.Id });
 ```
-    </p>
+    
 </details>
 
 ## Adding data
@@ -172,167 +175,167 @@ Following the list of currently available commands with an example implementatio
 
 <details>
     <summary>AddCalendarCommand</summary>
-    <p>
+    
 ```csharp
 
 var commandResult = _commandDispatcher.Dispatch<AddCalendarCommand>(new AddCalendarCommand() { Calendar = calendar });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>AddCalendarToUserCommand</summary>
-    <p>
+    
 ```csharp
 var commandResult = _commandDispatcher.Dispatch<AddCalendarToUserCommand>(new AddCalendarToUserCommand() { UserId = userId, Calendar = calendar });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>UpdateCalendarCommand</summary>
-    <p>
+    
 ```csharp
 var commandResult = _commandDispatcher.Dispatch<UpdateCalendarCommand>(new UpdateCalendarCommand() { Calendar = calendar });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>DeleteCalendarByIdCommand</summary>
-    <p>
+    
 ```csharp
 var commandResult = _commandDispatcher.Dispatch<DeleteCalendarByIdCommand>(new DeleteCalendarByIdCommand() { CalendarId = calendarId });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>AddEventCommand</summary>
-    <p>
+    
 ```csharp
 var commandResult = _commandDispatcher.Dispatch<AddEventCommand>(new AddEventCommand() { Event = event });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>UpdateEventCommand</summary>
-    <p>
+    
 ```csharp
 var commandResult = _commandDispatcher.Dispatch<UpdateEventCommand>(new UpdateEventCommand() { Event = event });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>DeleteEventByIdCommand</summary>
-    <p>
+    
 ```csharp
 var commandResult = _commandDispatcher.Dispatch<DeleteEventByIdCommand>(new DeleteEventByIdCommand() { EventId = eventId });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>AddLocationCommand</summary>
-    <p>
+    
 ```csharp
 var commandResult = _commandDispatcher.Dispatch<AddLocationCommand>(new AddLocationCommand() { Location = location });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>AddLocationToUserCommand</summary>
-    <p>
+    
 ```csharp
 var commandResult = _commandDispatcher.Dispatch<AddLocationToUserCommand>(new AddLocationToUserCommand() { UserId = userId, Location = location });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>UpdateLocationCommand</summary>
-    <p>
+    
 ```csharp
 var commandResult = _commandDispatcher.Dispatch<UpdateLocationCommand>(new UpdateLocationCommand() { Location = location });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>DeleteLocationByIdCommand</summary>
-    <p>
+    
 ```csharp
 var commandResult = _commandDispatcher.Dispatch<DeleteLocationByIdCommand>(new DeleteLocationByIdCommand() { LocationId = locationId });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>AddOrganiserCommand</summary>
-    <p>
+    
 ```csharp
 var commandResult = _commandDispatcher.Dispatch<AddOrganiserCommand>(new AddOrganiserCommand() { Organiser = organiser });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>AddOrganiserToUserCommand</summary>
-    <p>
+    
 ```csharp
 var commandResult = _commandDispatcher.Dispatch<AddOrganiserToUserCommand>(new AddOrganiserToUserCommand() { UserId = userId, Organiser = organiser });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>UpdateOrganiserCommand</summary>
-    <p>
+    
 ```csharp
 var commandResult = _commandDispatcher.Dispatch<UpdateOrganiserCommand>(new UpdateOrganiserCommand() { Organiser = organiser });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>DeleteOrganiserByIdCommand</summary>
-    <p>
+    
 ```csharp
 var commandResult = _commandDispatcher.Dispatch<DeleteOrganiserByIdCommand>(new DeleteOrganiserByIdCommand() { OrganiserId = organiserId });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>AddNewUserIfNotExistsCommand</summary>
-    <p>
+    
 ```csharp
 var commandResult = _commandDispatcher.Dispatch<AddNewUserIfNotExistsCommand>(new AddNewUserIfNotExistsCommand() { User = user });
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>UpdateUserCommand</summary>
-    <p>
+    
 ```csharp
 
 var commandResult = _commandDispatcher.Dispatch<UpdateUserCommand>(new UpdateUserCommand() { User = user });
 
 ```
-    </p>
+    
 </details>
 
 <details>
     <summary>ImportIcsFilesCommand</summary>
-    <p>
+    
 ```csharp
 var commandResult = _commandDispatcher.Dispatch<ImportIcsFilesCommand>(new ImportIcsFilesCommand() { FileNames = fileNames, CalendarId = calendarId });
 ```
-    </p>
+    
 </details>
 
 ### Validating commands
