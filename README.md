@@ -10,5 +10,10 @@ If you find any bugs, report them to "bugs at davidbrendel dot de", use the [sup
 **This documentation is currently worked on and will increase over time**
 
 ## Table of contents
-1. [Introduction](01 - Installation.md)
-4. [Using the API](04 - Using the API.md)
+1. [Installation](01 - Installation.md)
+2. [Calendar handling](01 - Calendar handling.md)
+3. [Event handling](01 - Event handling.md)
+4. [Location handling](01 - Location handling.md)
+5. [Organiser handling](01 - Organiser handling.md)
+6. [Security settings](01 - Security settings.md)
+7. [Using the API](04 - Using the API.md)
