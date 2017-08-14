@@ -62,6 +62,22 @@ There are different macros in the package that can be used to display different 
 * EventCalendar.LocationDetails
 * EventCalendar.EventDetails
 
+If you want to use the macros for calendar or details make sure to also add the necessary css/js files to your master view. All can be found in the EventCalendar folder in the css/js folder.
+
+```html
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="@Url.Content("~/js/EventCalendar/moment.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/js/EventCalendar/fullcalendar.min.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/js/EventCalendar/gcal.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/js/EventCalendar/lang-all.js")"></script>
+<script type="text/javascript" src="http://cdn.jsdelivr.net/qtip2/2.2.0/jquery.qtip.min.js"></script>
+```
+
+```html
+<link type="text/css" href="@Url.Content("~/css/EventCalendar/fullcalendar.css")" rel="stylesheet" />
+<link type="text/css" href="http://cdn.jsdelivr.net/qtip2/2.2.0/jquery.qtip.min.css" rel="stylesheet" />
+```
+
 ## EventCalendar section
 This package provides its own custom section where calendar, events, locations and organiser can be created and edited.
 
